@@ -1,0 +1,231 @@
+---
+# =========================================================
+# 📘 CARÁTULA DE LA PRESENTACIÓN
+# =========================================================
+
+title: "Signo de la primera derivada y aplicaciones"
+
+subtitle: |
+  Cálculo Diferencial
+
+  <div class="crocky"></div>
+
+# ---------------------------------------------------------
+# CONFIGURACIÓN DE LA CARÁTULA
+# ---------------------------------------------------------
+title-slide-attributes:
+  data-background-color: "#5A9FF5"
+  data-background-image: Logociencias.png
+  data-background-size: 15%
+  data-background-position: right 40px top 40px
+  data-background-repeat: no-repeat
+
+# ---------------------------------------------------------
+# FORMATO GENERAL
+# ---------------------------------------------------------
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    controls: true
+    center: true
+    transition: slide
+    mathjax: true
+    embed-resources: true
+    width: 1280
+    height: 720
+
+    include-in-header:
+      - text: |
+          <style>
+
+          /* =========================================
+             COLORES GENERALES
+             ========================================= */
+
+          .reveal section h1,
+          .reveal section h2,
+          .reveal section h3 {
+            color: #1711AB;
+          }
+
+          .reveal section p,
+          .reveal section li {
+            color: white;
+          }
+
+          .reveal .MathJax {
+            color: white;
+          }
+
+          /* =========================================
+             CROCKY ANIMADO (SOLO CARÁTULA) 🐊
+             ========================================= */
+
+          @keyframes crocky-title {
+            0%   { background-image: url("Crocky.png"); }
+            33%  { background-image: url("Crocky1.png"); }
+            66%  { background-image: url("Crocky2.png"); }
+            100% { background-image: url("Crocky.png"); }
+          }
+
+          .crocky {
+            width: 55%;
+            height: 260px;
+            margin: 0.5em auto 0 auto;
+
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+
+            animation: crocky-title 1.2s infinite steps(1);
+          }
+
+          @media (max-width: 900px) {
+            .crocky {
+              width: 60%;
+              height: 220px;
+            }
+          }
+
+          /* =========================================
+             FIX COLUMNAS + MATHJAX
+             ========================================= */
+
+          .reveal section .columns {
+            display: flex !important;
+            align-items: center;
+            gap: 1.2em;
+          }
+
+          .reveal section .column {
+            flex: 1 1 0;
+          }
+
+          </style>
+---
+
+## Teorema del valor medio {data-background-color="#5A9FF5"}
+
+::: columns
+::: column{width="45%"}
+
+<div style="font-size:0.7em; line-height:1.25;">
+
+Sea la función $f:D\to\mathbb{R}$ cuyo dominio $D$ contiene un intervalo $[a,b]$. Si $f$ es continua en $[a,b]$ y derivable en $]a,b[$, entonces existe $c\in ]a,b[$ tal que 
+
+$$
+f'(c)=\frac{f(b)-f(a)}{b-a}
+$$
+
+
+-  El teorema no dice que $c$ es único, puede haber más de un $c$ que cumpla con la fórmula de arriba.
+
+
+</div>
+
+:::
+::: column{width="55%"}
+
+<video src="TVM.mp4"
+       controls
+       autoplay
+       loop
+       muted
+       playsinline
+       preload="auto"
+       style="width: 130%; max-width: 130%; border-radius: 12px;">
+</video>
+
+:::
+:::
+
+
+## Aplicación {data-background-color="#5A9FF5"}
+
+::: columns
+::: column{width="50%"}
+
+<div style="font-size:0.7em; line-height:1.25;">
+
+Sea $f:I\to\mathbb{R}$ continua en un intervalo $I$ y derivable en el interior de dicho intervalo. Se cumple que:
+
+-   Si $f'>0$ en el interior de $I$ entonces $f$ es creciente en $I$. 
+-   Si $f'<0$ en el interior de $I$ entonces $f$ es decreciente en $I$.
+
+También diremos que $f$ es monótona en $I$ cuando $f$ es creciente (o decreciente) en $I$.
+
+</div>
+
+:::
+::: column{width="50%"}
+
+<video src="Funcioncrec.mp4"
+       controls
+       autoplay
+       loop
+       muted
+       playsinline
+       preload="auto"
+       style="width: 115%; max-width: 115%; border-radius: 12px;">
+</video>
+
+:::
+:::
+
+## Máximos y mínimos de una función {data-background-color="#5A9FF5"}
+
+::: columns
+::: column{width="70%"}
+
+<div style="font-size:0.7em; line-height:1.25;">
+
+Dada $f:D\to\mathbb{R}$ decimos que:
+
+-   $M$ es el valor máximo de $f$ cuando existe $c\in D$ tal que 
+$$f(x)\leq M=f(c)$$ para todo $x\in D$. En este caso decimos que $c$ es un máximo de $f$.
+-   $m$ es el valor mínimo  de $f$ cuando existe $c\in D$ tal que 
+$$f(x)\geq m=f(c)$$ para todo $x\in D$. En este caso decimos que $c$ es un mínimo de $f$.
+
+</div>
+
+:::
+::: column{width="30%"}
+
+<div style="
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 0.4em 0.5em;
+  margin-bottom: 0.5em;
+  background-color: rgba(255,255,255,0.12);
+  font-size: 0.7em;
+  color: white;
+">
+
+<div style="
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.2em;
+">
+Teorema
+</div>
+
+<div style="text-align: left;">
+Si $f:[a,b]\to\mathbb{R}$ es continua entonces $f$ tiene valor máximo $M$ y valor mínimo $m$. Además $$R_f=[m,M]$$
+</div>
+
+</div>
+
+<video src="RangoFuncion.mp4"
+       controls
+       autoplay
+       loop
+       muted
+       playsinline
+       preload="auto"
+       style="width: 90%; max-width: 90%; border-radius: 12px;">
+</video>
+
+:::
+:::
+
